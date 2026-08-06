@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expresso Rosso — Transporte en Lobos</title>
+<meta name="description" content="Horarios, líneas, mapa y alertas del servicio de colectivos Expresso Rosso en Lobos, Buenos Aires.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/[email protected]/dist/leaflet.css" />
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="line-rail" aria-hidden="true"></div>
+
+<div class="announce-bar">
+  <i data-lucide="phone-call"></i>
+  Atención al usuario: <strong>0800 333 1267</strong>
+  &nbsp;|&nbsp;
+  Servicio de transporte urbano · Lobos, Buenos Aires
+</div>
+
+<header class="topbar" id="topbar">
+  <div class="topbar-inner">
+    <a href="#inicio" class="brand">
+      <span class="brand-mark">ER</span>
+      <span class="brand-name">Expresso<em>Rosso</em></span>
+    </a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#inicio" class="nav-link active">Inicio</a>
+      <a href="#mapa" class="nav-link">Mapa</a>
+      <a href="#lineas" class="nav-link">Líneas</a>
+      <a href="#alertas" class="nav-link">Alertas</a>
+      <a href="#pagos" class="nav-link">Formas de pago</a>
+    </nav>
+    <a href="tel:08003331267" class="topbar-cta">0800 333 1267</a>
+    <button class="topbar-bell" aria-label="Menú"><i data-lucide="menu"></i></button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ═══════════════════ INICIO ═══════════════════ -->
+  <section class="home-screen" id="inicio">
+
+    <!-- Hero tipo Del Sur Bus: foto completa + texto + CTAs -->
+    <div class="home-hero">
+      <div class="home-hero-content">
+        <h1>Transporte Público<br><em>en Lobos</em></h1>
+        <p class="home-hero-desc">Más de 30 años conectando los barrios de Lobos con seguridad, puntualidad y compromiso. Dos líneas, una sola misión.</p>
+        <p class="home-hero-tag">¡Tu destino, nuestro compromiso!</p>
+        <div class="home-hero-btns">
+          <button class="btn-hero btn-hero-solid" data-section="lineas">Ver líneas y horarios</button>
+          <button class="btn-hero btn-hero-outline" data-section="mapa">Mapa de paradas</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 accesos rápidos -->
+    <div class="home-services">
+      <div class="home-services-inner">
+
+        <button class="service-card" data-section="mapa">
+          <span class="service-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          <span class="service-title">Mapa</span>
+          <span class="service-desc">Paradas y recorridos</span>
+        </button>
+
+        <button class="service-card" data-section="lineas">
+          <span class="service-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8h2M15 8h2M7 12h10"/></svg>
+          </span>
+          <span class="service-title">Líneas</span>
+          <span class="service-desc">Horarios y recorridos</span>
+        </button>
+
+        <button class="service-card" data-section="alertas">
+          <span class="service-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </span>
+          <span class="service-title">Alertas</span>
+          <span class="service-desc">Estado del servicio</span>
+        </button>
+
+        <button class="service-card" data-section="pagos">
+          <span class="service-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          </span>
+          <span class="service-title">Formas de pago</span>
+          <span class="service-desc">Medios y tarifas</span>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Historia institucional -->
+    <div class="home-section">
+      <p class="eyebrow">Quiénes somos</p>
+      <h2>30 años recorriendo Lobos</h2>
+      <p class="section-lede">Expresso Rosso SRL es el servicio de transporte público urbano de Lobos. Con más de tres décadas de trayectoria, conectamos los barrios de la ciudad con puntualidad, seguridad y compromiso con la comunidad.</p>
+      <div class="about-stats">
+        <div class="stat"><span class="stat-num">30+</span><span class="stat-label">años de servicio</span></div>
+        <div class="stat"><span class="stat-num">2</span><span class="stat-label">líneas activas</span></div>
+        <div class="stat"><span class="stat-num">5</span><span class="stat-label">barrios conectados</span></div>
+      </div>
+    </div>
+
+    <!-- Contacto -->
+    <div class="home-section home-section-alt">
+      <p class="eyebrow">Contacto</p>
+      <h2>Hablemos</h2>
+      <p class="section-lede">Atención al usuario y consultas generales.</p>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <a href="tel:08003331267" class="contact-item">
+            <span class="contact-label">Atención al cliente</span>
+            <span class="contact-value">0800 333 1267</span>
+          </a>
+          <a href="mailto:[email protected]" class="contact-item">
+            <span class="contact-label">Correo electrónico</span>
+            <span class="contact-value">[email protected]</span>
+          </a>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <label>Nombre
+            <input type="text" name="nombre" required placeholder="Tu nombre">
+          </label>
+          <label>Correo
+            <input type="email" name="correo" required placeholder="[email protected]">
+          </label>
+          <label>Mensaje
+            <textarea name="mensaje" rows="4" required placeholder="Contános tu consulta"></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════ MAPA ═══════════════════ -->
+  <section class="section" id="mapa" hidden>
+    <div class="section-head">
+      <p class="eyebrow">Ubicación</p>
+      <h2>Mapa de paradas</h2>
+      <p class="section-lede">Ubicá las paradas de las líneas 501 y 502 en Lobos, Buenos Aires.</p>
+    </div>
+    <div class="map-box" aria-label="Mapa de Lobos, Buenos Aires">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52173.538234440166!2d-59.14803030436853!3d-35.18538719493582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bd00ac657508d3%3A0x8ce899838400d1d4!2sLobos%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1785942980237!5m2!1ses-419!2sar"
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin" title="Mapa de Lobos, Buenos Aires">
+      </iframe>
+    </div>
+    <div class="map-legend">
+      <span><i class="dot dot-501"></i> Línea 501 — Terminal ↔ Villa Cattoni</span>
+      <span><i class="dot dot-502"></i> Línea 502 — Terminal ↔ Aguada</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ LÍNEAS ═══════════════════ -->
+  <section class="section" id="lineas" hidden>
+    <div class="section-head">
+      <p class="eyebrow">Recorridos</p>
+      <h2>Líneas de servicio</h2>
+      <p class="section-lede">Seleccioná una línea para ver sus paradas y horarios completos.</p>
+    </div>
+
+    <div class="line-btns">
+      <button class="line-btn line-btn-501 active" data-line="501">Línea 501</button>
+      <button class="line-btn line-btn-502" data-line="502">Línea 502</button>
+    </div>
+
+    <div class="departure-section">
+      <p class="departure-section-title">Próximas salidas</p>
+      <div class="departure-list" id="departureList"></div>
+    </div>
+
+    <div id="linePanel"></div>
+
+    <div class="schedule-wrap">
+      <div class="schedule-card">
+        <div class="schedule-card-head">
+          <h3>Lunes a Sábados</h3>
+          <span class="freq-pill" id="freqWeek">—</span>
+        </div>
+        <div class="schedule-grid" id="scheduleWeek"></div>
+      </div>
+      <div class="schedule-card">
+        <div class="schedule-card-head">
+          <h3>Domingos y Feriados</h3>
+          <span class="freq-pill" id="freqSunday">—</span>
+        </div>
+        <div class="schedule-grid" id="scheduleSunday"></div>
+      </div>
+    </div>
+
+    <div class="notice">
+      <span class="notice-icon"><i data-lucide="alert-triangle"></i></span>
+      <div>
+        <strong>Aviso de servicio</strong>
+        <p>Debido a obras en Av. Alem, la parada &ldquo;Terminal&rdquo; se desplazó 100&nbsp;m al sur.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ ALERTAS ═══════════════════ -->
+  <section class="section" id="alertas" hidden>
+    <div class="section-head">
+      <p class="eyebrow">Estado del servicio</p>
+      <h2>Alertas</h2>
+      <p class="section-lede">Mantenete informado sobre el estado de las rutas 501 y 502.</p>
+    </div>
+    <div class="alert-list">
+      <article class="alert-card alert-critical">
+        <div class="alert-top">
+          <span class="alert-badge">Crítico</span>
+          <span class="alert-time">Hace 5 min</span>
+        </div>
+        <h3>Retraso de 10 min — Línea 502</h3>
+        <p>Retrasos significativos debido a obras viales en la Av. Principal.</p>
+        <span class="alert-tag">Obras en curso</span>
+      </article>
+      <article class="alert-card alert-ok">
+        <div class="alert-top">
+          <span class="alert-badge">Estable</span>
+          <span class="alert-time">Actualizado ahora</span>
+        </div>
+        <h3>Servicio normal — Línea 501</h3>
+        <p>La línea 501 está operando según el horario programado, sin incidencias.</p>
+        <span class="alert-tag">Frecuencia: cada 30 min</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ FORMAS DE PAGO ═══════════════════ -->
+  <section class="section" id="pagos" hidden>
+    <div class="section-head">
+      <p class="eyebrow">Tarifas y medios de pago</p>
+      <h2>Formas de pago</h2>
+      <p class="section-lede">Conocé todas las formas de abonar tu boleto en nuestra red.</p>
+    </div>
+    <div class="pay-grid">
+      <div class="pay-card pay-card-official">
+        <span class="pay-flag">Oficial</span>
+        <h3>Tarjeta SUBE</h3>
+        <p>El estándar del transporte público. Apoyá y listo. Válida en AMBA y red nacional.</p>
+      </div>
+      <div class="pay-card">
+        <h3>Mercado Pago</h3>
+        <p>Escaneá el código QR en la unidad al subir.</p>
+      </div>
+      <div class="pay-card">
+        <h3>Visa / Mastercard</h3>
+        <p>Contactless y QR habilitados en todas las unidades.</p>
+      </div>
+    </div>
+    <div class="recharge-box">
+      <h4>¿Dónde recargar la SUBE?</h4>
+      <ul>
+        <li>Kioscos y loterías adheridas en Lobos</li>
+        <li>App SUBE — carga electrónica con débito o billeteras virtuales</li>
+        <li>Acreditación NFC apoyando la tarjeta en el celular</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>&#169; <span id="year"></span> Expresso Rosso SRL &#8212; Lobos, Buenos Aires</span>
+    <div class="footer-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#lineas">L&#237;neas</a>
+      <a href="#mapa">Mapa</a>
+      <a href="#alertas">Alertas</a>
+      <a href="#pagos">Pagos</a>
+    </div>
+  </div>
+</footer>
+
+<nav class="mobile-nav" aria-label="Navegaci&#243;n principal">
+  <a href="#inicio"  class="mnav-link active" data-target="inicio"> <span>&#127968;</span><span>Inicio</span></a>
+  <a href="#mapa"    class="mnav-link"         data-target="mapa">  <span>&#128205;</span><span>Mapa</span></a>
+  <a href="#lineas"  class="mnav-link"         data-target="lineas"><span>&#128652;</span><span>L&#237;neas</span></a>
+  <a href="#alertas" class="mnav-link"         data-target="alertas"><span>&#128276;</span><span>Alertas</span></a>
+  <a href="#pagos"   class="mnav-link"         data-target="pagos"> <span>&#128179;</span><span>Pagos</span></a>
+</nav>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
