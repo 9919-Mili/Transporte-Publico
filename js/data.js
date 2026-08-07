@@ -1,4 +1,4 @@
-/* Datos del servicio Expresso Rosso.
+/* Datos del servicio Expreso Rosso.
    Editá acá los horarios, paradas y frecuencias: el sitio se actualiza solo. */
 
 const LINES = {
