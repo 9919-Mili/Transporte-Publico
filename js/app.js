@@ -175,9 +175,26 @@ window.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('load', () => { if (map) map.invalidateSize(); });
 
+/* ---------- Envío del formulario de contacto (con recarga) ---------- */
 document.getElementById('contactForm').addEventListener('submit', (e) => {
   e.preventDefault();
-  const note = document.getElementById('formNote');
-  note.textContent = '¡Gracias! Tu mensaje quedó registrado. Te responderemos a la brevedad.';
-  e.target.reset();
+  sessionStorage.setItem('consultaEnviada', 'true');
+  location.reload();
+});
+
+/* ---------- Mostrar notificación toast ---------- */
+function showToast(message, duration = 4000) {
+  const toast = document.getElementById('toast');
+  if (!toast) return;
+  toast.textContent = message;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), duration);
+}
+
+/* ---------- Verificar si venimos de un envío exitoso ---------- */
+window.addEventListener('DOMContentLoaded', () => {
+  if (sessionStorage.getItem('consultaEnviada') === 'true') {
+    sessionStorage.removeItem('consultaEnviada');
+    showToast('¡Gracias! Tu consulta fue registrada correctamente.');
+  }
 });

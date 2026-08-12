@@ -16,7 +16,7 @@ Sitio web estático (HTML, CSS y JavaScript puro, sin frameworks ni build tools)
 ## Estructura del proyecto
 
 ```
-expresso-rosso/
+expreso-rosso/
 ├── index.html          → toda la estructura del sitio (una sola página con secciones ancladas)
 ├── css/
 │   └── style.css       → estilos y diseño visual

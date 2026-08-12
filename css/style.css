@@ -530,19 +530,46 @@ img{ max-width: 100%; display:block; }
    ========================================================= */
 .mobile-nav{
   position: fixed; bottom:0; left:0; right:0; z-index: 150;
-  background: var(--line-white); border-top: 2px solid var(--ink);
-  display: flex; justify-content: space-around;
-  padding: 8px 0 max(8px, env(safe-area-inset-bottom));
+  background: rgba(255,255,255,.98);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid #e8e2d8;
+  box-shadow: 0 -6px 24px rgba(26,26,29,.08);
+  display: flex; justify-content: space-around; align-items: stretch;
+  padding: 6px 4px max(6px, env(safe-area-inset-bottom));
 }
 .mnav-link{
-  display:flex; flex-direction:column; align-items:center; gap:3px;
-  font-family: var(--font-mono); font-size:.62rem; color: var(--asphalt);
-  text-transform:uppercase; letter-spacing:.05em;
-  min-width: 56px; padding: 4px 0;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap: 3px;
+  flex: 1;
+  color: var(--asphalt);
+  padding: 6px 2px 5px;
+  border-radius: 12px;
+  transition: color .18s ease;
+  -webkit-tap-highlight-color: transparent;
 }
-.mnav-link [data-lucide]{ width: 22px; height: 22px; display:block; }
-.mnav-link span{ line-height: 1; }
+.mnav-ico{
+  display:flex; align-items:center; justify-content:center;
+  width: 40px; height: 26px;
+  border-radius: 10px;
+  transition: background .18s ease, transform .18s ease;
+}
+.mnav-ico svg{ width: 21px; height: 21px; display:block; }
+.mnav-label{
+  font-family: var(--font-mono);
+  font-size: .625rem;
+  font-weight: 500;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  line-height: 1;
+  transition: font-weight .18s ease;
+}
 .mnav-link.active{ color: var(--rosso); }
+.mnav-link.active .mnav-ico{
+  background: rgba(200,29,59,.1);
+  transform: translateY(-1px);
+}
+.mnav-link.active .mnav-label{ font-weight: 700; }
+.mnav-link:active .mnav-ico{ transform: scale(.92); }
 
 /* =========================================================
    RESPONSIVE — Tablet y Desktop (≥ 768 px)
@@ -622,4 +649,36 @@ img{ max-width: 100%; display:block; }
   .section{ padding: 76px 40px; }
   .home-cards{ padding: 0 40px; gap:20px; }
   .home-hero{ height: 380px; }
+}
+
+/* =========================================================
+   Notificación tipo toast
+   ========================================================= */
+.toast{
+  position: fixed;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--green);
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: .92rem;
+  padding: 14px 24px;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease, transform .3s ease;
+  z-index: 999;
+  max-width: 90%;
+  text-align: center;
+}
+.toast.show{
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (min-width: 768px){
+  .toast{ bottom: 32px; }
 }
