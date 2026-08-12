@@ -25,7 +25,7 @@ const LINES = {
   "502": {
     label: "Línea 502",
     route: "Terminal ↔ Aguada",
-    color: "#1A1A1D",
+    color: "rgb(12, 12, 221)",
     stops: [
       { name: "Terminal de Ómnibus", km: 0,  lat: -35.1868, lng: -59.1043 },
       { name: "Barrio Ruralia",     km: 9,  lat: -35.2010, lng: -59.0870 },
