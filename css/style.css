@@ -12,6 +12,10 @@
   --green: #2E7D4F;
   --blue: #1E5FA8;
   --blue-dark: #164780;
+  --visa-navy: #1A1F71;
+  --mp-blue: #00B1EA;
+  --mc-red: #EB001B;
+  --mc-orange: #F79E1B;
   --line-white: #ffffff;
 
   --font-display: "Oswald", sans-serif;
@@ -64,10 +68,15 @@ img{ max-width: 100%; display:block; }
    ========================================================= */
 .announce-bar{
   background: var(--rosso); color: #fff;
-  text-align: center; padding: 9px 16px;
+  padding: 9px 16px;
   font-family: var(--font-mono); font-size: .78rem; letter-spacing: .02em;
-  display: flex; align-items: center; justify-content: center; gap: 10px;
+  display: flex; align-items: center; gap: 10px;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
+.announce-bar::-webkit-scrollbar{ display: none; }
 .announce-bar [data-lucide]{ width:14px; height:14px; flex-shrink:0; }
 
 /* =========================================================
@@ -350,7 +359,7 @@ img{ max-width: 100%; display:block; }
 .line-btn:active{ transform:translateY(0); opacity:1; }
 .line-btn.active{ box-shadow:0 4px 16px rgba(0,0,0,.25); }
 .line-btn-501{ background:var(--rosso); }
-.line-btn-502{ background:var(--blue); }
+.line-btn-502{ background:var(--blue-dark); }
 
 /* Próximas salidas */
 .departure-section{ margin-bottom:24px; }
@@ -373,7 +382,7 @@ img{ max-width: 100%; display:block; }
   padding:5px 6px; border-radius:6px; text-align:center; color:#fff; line-height:1.3;
 }
 .badge-501{ background:var(--rosso); }
-.badge-502{ background:var(--blue); }
+.badge-502{ background:var(--blue-dark); }
 .departure-dest{ font-weight:600; font-size:.9rem; }
 .departure-sub{ font-size:.75rem; color:var(--asphalt); }
 .departure-right{ text-align:right; }
@@ -445,7 +454,7 @@ img{ max-width: 100%; display:block; }
 .map-legend{ display:flex; gap:24px; margin-top:16px; font-family: var(--font-mono); font-size:.85rem; }
 .dot{ display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:6px; }
 .dot-501{ background: var(--rosso); }
-.dot-502{ background: var(--blue); }
+.dot-502{ background: var(--blue-dark); }
 
 /* =========================================================
    Alertas
@@ -479,6 +488,21 @@ img{ max-width: 100%; display:block; }
   font-family: var(--font-mono); font-size:.7rem; padding:4px 10px; border-radius:20px;
 }
 .pay-card h3{ font-size:1.1rem; }
+
+/* Chips de logo por medio de pago — color de marca, sin reproducir el isotipo oficial */
+.pay-logo{
+  display:flex; align-items:center; justify-content:center;
+  width:52px; height:38px; border-radius:8px; color:#fff;
+  margin-bottom:14px;
+}
+.pay-logo svg{ width:24px; height:24px; }
+.pay-logo-group{ display:flex; gap:10px; margin-bottom:14px; }
+.pay-logo-group .pay-logo{ margin-bottom:0; }
+.pay-logo-sube{ background: var(--rosso); }
+.pay-logo-mp{ background: var(--mp-blue); }
+.pay-logo-visa{ background: var(--visa-navy); }
+.pay-logo-mc{ background: linear-gradient(135deg, var(--mc-red) 0%, var(--mc-red) 45%, var(--mc-orange) 100%); }
+
 .recharge-box{ background: var(--ink); color: var(--paper); border-radius:6px; padding:24px 28px; }
 .recharge-box h4{ color: var(--amber); margin-bottom:12px; }
 .recharge-box ul{ margin:0; padding-left: 20px; }

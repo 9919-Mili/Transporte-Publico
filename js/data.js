@@ -11,7 +11,7 @@ const LINES = {
       { name: "Terminal de Ómnibus", km: 12, lat: -35.1868, lng: -59.1043 },
       { name: "Barrio Celeste",     km: 6,  lat: -35.1920, lng: -59.0990 },
       { name: "Barrio Blanco",      km: 6,  lat: -35.1950, lng: -59.1100 },
-      { name: "Barrio Aguada",      km: 10, lat: -35.1720, lng: -59.0950 }
+      { name: "Barrio La Aguada",      km: 10, lat: -35.1720, lng: -59.0950 }
     ],
     schedule: {
       weekFreq: "Cada 30 minutos",
@@ -24,12 +24,12 @@ const LINES = {
   },
   "502": {
     label: "Línea 502",
-    route: "Terminal ↔ Aguada",
+    route: "Terminal ↔ La Aguada",
     color: "rgb(12, 12, 221)",
     stops: [
       { name: "Terminal de Ómnibus", km: 0,  lat: -35.1868, lng: -59.1043 },
       { name: "Barrio Ruralia",     km: 9,  lat: -35.2010, lng: -59.0870 },
-      { name: "Barrio Aguada",      km: 14, lat: -35.1720, lng: -59.0950 }
+      { name: "Barrio La Aguada",      km: 14, lat: -35.1720, lng: -59.0950 }
     ],
     schedule: {
       weekFreq: "Cada 1 hora",
@@ -46,5 +46,5 @@ const NEXT_DEPARTURES = [
   { line: "501", destination: "Estación Central", eta: "4 min" },
   { line: "502", destination: "Barrio Ruralia",    eta: "12 min" },
   { line: "501", destination: "Villa Cattoni",     eta: "18 min" },
-  { line: "502", destination: "Barrio Aguada",     eta: "34 min" }
+  { line: "502", destination: "Barrio La Aguada",     eta: "34 min" }
 ];
