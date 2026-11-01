@@ -218,7 +218,7 @@ img{ max-width: 100%; display:block; }
 }
 .service-card{
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 14px; padding: 22px 12px; min-height: 120px;
+  gap: 14px; padding: 18px 12px; min-height: 120px;
   background: #fff; border: none; cursor: pointer;
   font-family: var(--font-body); text-align: center;
   border-radius: var(--radius-md);
@@ -229,12 +229,12 @@ img{ max-width: 100%; display:block; }
 .service-card:hover .service-ico{ background: rgba(255,255,255,.2); color: #fff; }
 .service-card:hover .service-desc{ color: rgba(255,255,255,.8); }
 .service-ico{
-  width: 76px; height: 76px; border-radius: var(--radius-lg);
+  width: 48px; height: 48px; border-radius: var(--radius-lg);
   background: var(--paper-dim); color: var(--rosso);
   display: flex; align-items: center; justify-content: center;
   transition: background .2s, color .2s;
 }
-.service-ico svg{ width: 38px; height: 38px; stroke-width: 1.8; }
+.service-ico svg{ width: 24px; height: 24px; stroke-width: 1.8; }
 .service-title{
   font-family: var(--font-display); font-weight: 700; font-size: 1.25rem;
   text-transform: uppercase; letter-spacing: .04em; color: inherit;
