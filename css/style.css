@@ -773,3 +773,76 @@ line-height:1.4;
 @media (min-width: 768px){
   .toast{ bottom: 32px; }
 }
+
+/* Tarjeta: en celular va debajo de los botones */
+
+.home-hero{ flex-direction:column; align-items:stretch; justify-content:flex-end; height:auto; min-height:82vh; }
+
+/* Tablet */
+@media (min-width:768px){
+  .home-hero{ min-height:88vh; }
+  .hero-next{ margin:0 48px 48px; max-width:420px; }
+}
+
+/* Compu: flota en la esquina derecha */
+@media (min-width:1024px){
+  .home-hero{ flex-direction:row; align-items:flex-end; justify-content:flex-start; }
+  .hero-next{ position:absolute; right:48px; bottom:60px; width:300px; margin:0; }
+}
+
+  .hero-next{
+    display:block; position:absolute; 
+    right:48px;
+    bottom:60px;
+    z-index:1;
+    width:300px;
+    padding:18px; 
+    color:#fff;
+    background:rgba(255,255,255,.12); 
+    border:1px solid rgba(255,255,255,.22);
+    border-radius:var(--radius-lg); 
+    backdrop-filter:blur(14px);
+  }
+}
+
+.hero-next-label{ font-family:var(--font-mono); 
+font-size:.7rem; 
+text-transform:uppercase; 
+letter-spacing:.1em; 
+color:var(--amber); 
+}
+
+
+.hero-next-row{ display:grid; 
+grid-template-columns:44px 1fr auto; 
+gap:12px; align-items:center; 
+padding:12px 0; 
+border-bottom:1px solid rgba(255,255,255,.15); 
+}
+
+.hero-next-row:last-child{ border-bottom:none; 
+padding-bottom:0; 
+}
+
+.hero-next-row strong{ display:block; 
+font-size:.95rem; 
+}
+
+.hero-next-row small{ color:rgba(255,255,255,.7); 
+font-size:.75rem; 
+}
+
+.hero-next-line{ background:var(--rosso); 
+border-radius:10px; 
+text-align:center; 
+padding:6px 0; font-family:var(--font-display); 
+font-weight:700; 
+}
+
+.hero-next-line-502{ background:var(--blue-dark); 
+}
+
+.hero-next-time{ font-family:var(--font-mono); 
+font-weight:600; 
+font-size:1.1rem; 
+}
