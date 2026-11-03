@@ -57,6 +57,8 @@ function renderLine(id){
     line.schedule.week.map(t => `<span class="schedule-time">${t}</span>`).join('');
   document.getElementById('scheduleSunday').innerHTML =
     line.schedule.sunday.map(t => `<span class="schedule-time">${t}</span>`).join('');
+  document.getElementById('scheduleWrap').style.setProperty('--line-color', line.color);
+  marcarHorarios();
 
   drawRouteOnMap(id);
 }
@@ -64,6 +66,30 @@ function renderLine(id){
 document.querySelectorAll('.line-btn').forEach(btn => {
   btn.addEventListener('click', () => renderLine(btn.dataset.line));
 });
+
+
+/* ---------- Horarios: atenúa los que ya pasaron y resalta el próximo ---------- */
+function marcarHorarios(){
+  const ahora = new Date();
+  const minutosAhora = ahora.getHours() * 60 + ahora.getMinutes();
+  const esDomingo = ahora.getDay() === 0;
+
+  document.getElementById('cardWeek').classList.toggle('is-today', !esDomingo);
+  document.getElementById('cardSunday').classList.toggle('is-today', esDomingo);
+
+  const grilla = document.getElementById(esDomingo ? 'scheduleSunday' : 'scheduleWeek');
+  let proximoMarcado = false;
+  grilla.querySelectorAll('.schedule-time').forEach(el => {
+    const [h, m] = el.textContent.split(':').map(Number);
+    const minutos = h * 60 + m;
+    if (minutos < minutosAhora) {
+      el.classList.add('is-past');
+    } else if (!proximoMarcado) {
+      el.classList.add('is-next');
+      proximoMarcado = true;
+    }
+  });
+}
 
 /* ---------- Mapa (Leaflet) — solo si hay #map en el DOM ---------- */
 let map = null, routeLayers = {};

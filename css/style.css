@@ -803,7 +803,6 @@ line-height:1.4;
     border-radius:var(--radius-lg); 
     backdrop-filter:blur(14px);
   }
-}
 
 .hero-next-label{ font-family:var(--font-mono); 
 font-size:.7rem; 
@@ -846,3 +845,27 @@ font-weight:700;
 font-weight:600; 
 font-size:1.1rem; 
 }
+
+
+/* ===== Horarios ===== */
+.schedule-card{ position:relative; overflow:hidden; padding-top:26px; }
+.schedule-card::before{ content:""; position:absolute; top:0; left:0; right:0; height:5px; background:var(--line-color, var(--rosso)); }
+.schedule-card-head{ flex-wrap:wrap; gap:10px; }
+.schedule-card-head h3{ display:flex; align-items:center; gap:10px; }
+.schedule-card.is-today .schedule-card-head h3::after{ content:"Hoy"; font-family:var(--font-mono); font-size:.65rem; letter-spacing:.06em;
+  background:var(--line-color, var(--rosso)); color:#fff; padding:3px 8px; border-radius:var(--radius-pill); }
+.freq-pill{ border:none; background:var(--ink); color:#fff; white-space:nowrap; }
+
+.schedule-time{ transition: transform .15s, background .15s; }
+.schedule-time:hover{ transform:translateY(-2px); background:#e8dfcf; }
+.schedule-time.is-past{ opacity:.35; text-decoration:line-through; }
+.schedule-time.is-next{ position:relative; background:var(--line-color, var(--rosso)); color:#fff; font-weight:700;
+  box-shadow:0 6px 16px rgba(0,0,0,.18); transform:scale(1.06); }
+.schedule-time.is-next::after{ content:"Próximo"; position:absolute; top:-9px; left:50%; transform:translateX(-50%);
+  background:var(--amber); color:var(--ink); font-size:.55rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+  padding:2px 7px; border-radius:var(--radius-pill); white-space:nowrap; }
+
+/* ===== Aviso ===== */
+.notice{ border:none; border-left:5px solid var(--amber); background:#fff; align-items:center; }
+.notice-icon{ width:42px; height:42px; border-radius:12px; background:#fff1d6; align-items:center; justify-content:center; padding:0; flex-shrink:0; }
+.notice-icon svg{ width:22px; height:22px; color:#c77d0a; }
