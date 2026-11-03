@@ -213,14 +213,16 @@ img{ max-width: 100%; display:block; }
 }
 .home-services-inner{
   max-width: var(--container); margin: 0 auto;
-  display: grid; grid-template-columns: repeat(2, 1fr);
-  gap: 14px; padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  padding: 20px;
 }
 .service-card{
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 14px; 
   padding: 10px 10px; 
-  min-height: 80px;
+  min-height: 0px;
   background: #fff; border: none; cursor: pointer;
   font-family: var(--font-body); text-align: center;
   border-radius: var(--radius-md);
@@ -230,6 +232,7 @@ img{ max-width: 100%; display:block; }
 .service-card:hover{ background: var(--rosso); color: #fff; transform: translateY(-4px); box-shadow: var(--card-shadow-hover); z-index:1; }
 .service-card:hover .service-ico{ background: rgba(255,255,255,.2); color: #fff; }
 .service-card:hover .service-desc{ color: rgba(255,255,255,.8); }
+
 .service-ico{
   width: 48px; height: 48px; border-radius: var(--radius-lg);
   background: var(--paper-dim); color: var(--rosso);
