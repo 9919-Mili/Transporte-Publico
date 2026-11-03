@@ -220,7 +220,7 @@ img{ max-width: 100%; display:block; }
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 14px; 
   padding: 10px 10px; 
-  min-height: 120px;
+  min-height: 80px;
   background: #fff; border: none; cursor: pointer;
   font-family: var(--font-body); text-align: center;
   border-radius: var(--radius-md);
