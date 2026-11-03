@@ -654,12 +654,13 @@ img{ max-width: 100%; display:block; }
   .home-hero-content{ padding: 60px 48px 60px; }
   .home-hero-content h1{ font-size: clamp(2.4rem, 4vw, 3.8rem); }
 
-  /* Servicios: fila de 4 */
-  .home-services-inner{ grid-template-columns: repeat(4,1fr); gap: 20px; padding: 28px 32px; }
-  .service-card{ min-height: 220px; padding: 44px 24px; }
-  .service-ico{ width: 88px; height: 88px; border-radius: var(--radius-lg); }
-  .service-ico svg{ width: 44px; height: 44px; }
-  .service-title{ font-size: 1.35rem; }
+  /* Servicios: fila de 4, tamaño de tarjetas con botones*/
+  .home-services-inner{
+  grid-template-columns: repeat(4,1fr); 
+  gap: 20px; 
+  padding: 28px 32px;
+  max-width: 700px; }
+  
 
   /* Home section */
   .home-section{ padding: 60px 40px; }
