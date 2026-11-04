@@ -371,11 +371,28 @@ img{ max-width: 100%; display:block; }
   cursor:pointer; font-size:1.1rem; font-weight:600; color:#fff;
   text-align:center; transition:opacity .15s, transform .1s, box-shadow .15s;
 }
-.line-btn:hover{ opacity:.9; transform:translateY(-1px); box-shadow: 0 8px 20px rgba(0,0,0,.18); }
-.line-btn:active{ transform:translateY(0); opacity:1; }
-.line-btn.active{ box-shadow:0 4px 16px rgba(0,0,0,.25); }
-.line-btn-501{ background:var(--rosso); }
-.line-btn-502{ background:var(--blue-dark); }
+
+/* ===== Botones de línea ===== */
+.line-btn{ --c: var(--rosso); width:100%; display:flex; align-items:center; gap:16px; text-align:left; cursor:pointer;
+  background:#fff; color:var(--ink); border:2px solid transparent; border-radius:var(--radius-lg);
+  padding:14px 18px; box-shadow:var(--card-shadow);
+  transition: transform .15s, box-shadow .2s, background .2s, color .2s, border-color .2s; }
+.line-btn-502{ --c: var(--blue-dark); }
+.line-btn:hover{ transform:translateY(-3px); box-shadow:var(--card-shadow-hover); border-color:var(--c); }
+
+.line-btn-num{ flex-shrink:0; width:56px; height:56px; border-radius:16px; display:flex; align-items:center; justify-content:center;
+  background:var(--c); color:#fff; font-family:var(--font-display); font-weight:700; font-size:1.3rem; }
+.line-btn-info{ flex:1; display:flex; flex-direction:column; gap:2px; }
+.line-btn-title{ font-family:var(--font-display); text-transform:uppercase; font-size:1.1rem; letter-spacing:.03em; }
+.line-btn-route{ font-family:var(--font-body); font-size:.85rem; font-weight:500; color:var(--asphalt); }
+.line-btn-arrow{ font-size:1.3rem; color:var(--c); transition: transform .2s; }
+.line-btn:hover .line-btn-arrow{ transform:translateX(4px); }
+
+/* El seleccionado */
+.line-btn.active{ background:var(--c); color:#fff; border-color:var(--c); box-shadow:0 12px 28px rgba(0,0,0,.2); }
+.line-btn.active .line-btn-num{ background:rgba(255,255,255,.2); }
+.line-btn.active .line-btn-route{ color:rgba(255,255,255,.8); }
+.line-btn.active .line-btn-arrow{ color:#fff; }
 
 /* Próximas salidas */
 .departure-section{ margin-bottom:24px; }
