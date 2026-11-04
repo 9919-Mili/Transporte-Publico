@@ -158,6 +158,9 @@ img{ max-width: 100%; display:block; }
 .btn-ghost{ background: transparent; color: var(--ink); }
 .btn-ghost:hover{ background: var(--ink); color: var(--paper); transform: translateY(-2px); }
 
+.line-btn-laguna{ --c: #6B2D7B; }
+.line-btn-num{ font-size:1.15rem; }
+
 /* =========================================================
    Home screen (inicio)
    ========================================================= */

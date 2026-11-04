@@ -39,7 +39,24 @@ const LINES = {
       sunday: ["06:15","08:15","10:15","12:15","14:15","16:15","18:15","20:15","22:15"]
     }
   }
-};
+}, 
+
+  "laguna": {
+    label: "Línea Laguna",
+    route: "Terminal ↔ Laguna de Lobos ↔ Salvador María",
+    color: "#6B2D7B",
+    stops: [
+      { name: "Terminal de Ómnibus", km: 0,  lat: -35.1868, lng: -59.1043 },
+      { name: "Laguna de Lobos",     km: 15, lat: -35.2760, lng: -59.1220 },
+      { name: "Salvador María",      km: 22, lat: -35.3030, lng: -59.1680 }
+    ],
+    schedule: {
+      weekFreq: "Cada 2 horas aprox.",
+      week: ["06:20","08:30","10:30","12:15","14:30","16:30","18:30","21:30"],
+      sundayFreq: "Cada 2 horas aprox.",
+      sunday: ["08:30","10:30","12:15","14:30","16:30","18:30","21:30"]
+    }
+  };
 
 /* Próximas salidas para el tablero de la portada (demo estático). */
 const NEXT_DEPARTURES = [
