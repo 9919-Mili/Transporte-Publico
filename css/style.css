@@ -632,9 +632,20 @@ line-height:1.4;
 .footer-inner{ display:flex; flex-direction:column; gap:12px; font-size:.82rem; }
 .footer-links{ display:flex; gap:16px; flex-wrap:wrap; }
 .footer-links a:hover{ color: var(--amber); }
-.footer-credit{ display:flex; align-items:center; gap:8px; font-size:.78rem; opacity:.7; transition:opacity .2s; }
-.footer-credit:hover{ opacity:1; }
-.footer-credit img{ height:22px; width:auto; }
+
+.footer-credit{ display:flex;
+align-items:center; 
+gap:8px; 
+font-size:.78rem; 
+opacity:.1; 
+transition:opacity .2s; 
+background:#fff;
+padding:6px 10px; 
+border-radius:10px;
+}
+
+.footer-credit img{ height: 40
+px; width:auto; }
 
 /* =========================================================
    Nav inferior (mobile)
