@@ -634,18 +634,15 @@ line-height:1.4;
 .footer-links a:hover{ color: var(--amber); }
 
 .footer-credit{ display:flex;
-align-items:center; 
-gap:8px; 
-font-size:.78rem; 
-opacity:.1; 
-transition:opacity .2s; 
-background:#fff;
-padding:6px 10px; 
-border-radius:10px;
-}
+lign-items:center;
+gap:8px;
+font-size:.78rem; }
 
-.footer-credit img{ height: 40
-px; width:auto; }
+.footer-credit img{ height:40px; 
+width:auto; 
+background:#fff; 
+padding:6px 10px; 
+border-radius:10px; }
 
 /* =========================================================
    Nav inferior (mobile)
